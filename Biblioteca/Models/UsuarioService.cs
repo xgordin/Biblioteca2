@@ -12,7 +12,6 @@ namespace Biblioteca.Models
         {
             using(BibliotecaContext uu = new BibliotecaContext())
             {
-
                 u.senhaUsuario = GenerateHashPassword(u.senhaUsuario);
                 uu.Usuario.Add(u);
                 uu.SaveChanges();

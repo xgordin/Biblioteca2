@@ -23,8 +23,10 @@ namespace Biblioteca.Controllers
 
         public IActionResult Index()
         {
-            
+            ViewBag.CheckUser = HttpContext.Session.GetString("user");
+
             return View();
+
         }
 
         public IActionResult Login()
@@ -48,8 +50,8 @@ namespace Biblioteca.Controllers
             }
             else
             {
-                ViewData["user"] = login.ToString();
-                HttpContext.Session.SetString("user", "admin");
+                ViewData["User"] = login;
+                HttpContext.Session.SetString("user", login);
                 return RedirectToAction("Index");
             }
         }
