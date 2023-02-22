@@ -1,0 +1,31 @@
+@model Livro
+<style>
+    .form-control{
+        width: 250px;
+        margin-bottom: 20px;
+    }
+    #ano{
+        margin-bottom: 20px;
+    }
+    #btn{
+        margin-left: 70px;
+    }
+</style>
+<div class="row justify-content-md-center">
+    <form asp-action="Cadastro" method="POST" class="col-md-4">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Titulo">Titulo</label>
+            <input asp-for="Titulo" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Autor">Autor</label>
+            <input asp-for="Autor" class="form-control" required/>
+        </div>
+        <div>
+            <label asp-for="Ano">Ano</label>
+            <input asp-for="Ano" required id="ano"/>
+        </div>
+        <input type="submit" value="Salvar" class="btn btn-primary" id="btn"/>
+    </form>
+</div>
